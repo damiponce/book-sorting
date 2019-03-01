@@ -1,0 +1,154 @@
+{
+  "mats" : [
+    {
+      "mat" : "Matemáticas",
+      "dias" : [
+        1,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "mat" : "Derechos",
+      "dias" : [
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "mat" : "Teoria de los Circuitos",
+      "dias" : [
+        1,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "mat" : "Aeronaves",
+      "dias" : [
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mat" : "Aeronaves TP",
+      "dias" : [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mat" : "Arte",
+      "dias" : [
+        1,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "mat" : "Filosofía",
+      "dias" : [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mat" : "Electrónica TP",
+      "dias" : [
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "mat" : "Electrónica",
+      "dias" : [
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "mat" : "Ingles",
+      "dias" : [
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "mat" : "Telecomunicaciones",
+      "dias" : [
+        0,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "mat" : "Instrumental TP",
+      "dias" : [
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "mat" : "Instrumental",
+      "dias" : [
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "mat" : "Virtual",
+      "dias" : [
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "mat" : "Termodinámica y Aerodinámica",
+      "dias" : [
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    }
+  ]
+}
