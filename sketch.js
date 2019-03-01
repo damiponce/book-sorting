@@ -90,7 +90,6 @@ function draw() {
 }
 
 
-
 function asignar(orden) {
   azul.mat1 = orden[0];
   azul.mat2 = orden[1];
