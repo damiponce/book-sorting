@@ -21,6 +21,7 @@ var vie = ['Viernes', 4];
 
 var total;
 var totalRecord = 9999;
+var qty = 0;
 var diasRecord = [];
 
 var orden = [];
@@ -87,6 +88,9 @@ function draw() {
 
   text(libros(lun)+'\n'+libros(mar)+'\n'+libros(mie)+'\n'+
       libros(jue)+'\n'+libros(vie), 250, 350);
+
+  qty++;
+  text('Combinaciones\nprobadas: ' + qty, 50, 250);
 }
 
 
