@@ -2,13 +2,13 @@ let data;
 let font;
 
 //Cuadernos
-var azul = {color:"Azul", mat1:"", mat2:"", mat3:"f", mat4:"f"};
-var violeta = {color:"Violeta", mat1:"", mat2:"", mat3:"f", mat4:"f"};
-var verde = {color:"Verde", mat1:"", mat2:"", mat3:"f", mat4:"f"};
-var negro = {color:"Negro", mat1:"", mat2:"", mat3:"f", mat4:"f"};
+var azul = { color: 'Azul', mat1: '', mat2: '', mat3: 'f', mat4: 'f' };
+var violeta = { color: 'Violeta', mat1: '', mat2: '', mat3: 'f', mat4: 'f' };
+var verde = { color: 'Verde', mat1: '', mat2: '', mat3: 'f', mat4: 'f' };
+var negro = { color: 'Negro', mat1: '', mat2: '', mat3: 'f', mat4: 'f' };
 //Carpetas
-var blanco = {color:"Blanco", mat1:"", mat2:"", mat3:"", mat4:""};
-var rosa = {color:"Rosa", mat1:"", mat2:"", mat3:"", mat4:"f"};
+var blanco = { color: 'Blanco', mat1: '', mat2: '', mat3: '', mat4: '' };
+var rosa = { color: 'Rosa', mat1: '', mat2: '', mat3: '', mat4: 'f' };
 
 var azulD, violetaD, verdeD, negroD, blancoD, rosaD;
 var azulR, violetaR, verdeR, negroR, blancoR, rosaR;
@@ -46,7 +46,7 @@ function setup() {
 function draw() {
   background(51);
 
-  orden = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+  orden = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
   ordenNew = shuffle(orden);
   asignar(ordenNew);
 
@@ -77,22 +77,77 @@ function draw() {
     rosaR = rosaD;
   }
 
-  text('Lunes: '+diasRecord[0]+'\n'+'Martes: '+diasRecord[1]+'\n'+'Miercoles: '+diasRecord[2]+'\n'+
-       'Jueves: '+diasRecord[3]+'\n'+'Viernes: '+diasRecord[4]+'\n\n'+'Total: '+totalRecord , 50, 50);
+  text(
+    'Lunes: ' +
+      diasRecord[0] +
+      '\n' +
+      'Martes: ' +
+      diasRecord[1] +
+      '\n' +
+      'Miercoles: ' +
+      diasRecord[2] +
+      '\n' +
+      'Jueves: ' +
+      diasRecord[3] +
+      '\n' +
+      'Viernes: ' +
+      diasRecord[4] +
+      '\n\n' +
+      'Total: ' +
+      totalRecord,
+    50,
+    50,
+  );
 
-  text(materias(azul, 0, 1)+'\n'+materias(violeta, 2, 3)+'\n'+materias(verde, 4, 5)+'\n'+
-       materias(negro, 6, 7)+'\n'+materias(blanco, 8, 9, 10, 11)+'\n'+materias(rosa, 12, 13, 14), 250, 50);
+  text(
+    materias(azul, 0, 1) +
+      '\n' +
+      materias(violeta, 2, 3) +
+      '\n' +
+      materias(verde, 4, 5) +
+      '\n' +
+      materias(negro, 6, 7) +
+      '\n' +
+      materias(blanco, 8, 9, 10, 11) +
+      '\n' +
+      materias(rosa, 12, 13, 14),
+    250,
+    50,
+  );
 
-  text(dias(azul, azulR)+'\n'+dias(violeta, violetaR)+'\n'+dias(verde, verdeR)+'\n'+
-      dias(negro, negroR)+'\n'+dias(blanco, blancoR)+'\n'+dias(rosa, rosaR), 250, 200);
+  text(
+    dias(azul, azulR) +
+      '\n' +
+      dias(violeta, violetaR) +
+      '\n' +
+      dias(verde, verdeR) +
+      '\n' +
+      dias(negro, negroR) +
+      '\n' +
+      dias(blanco, blancoR) +
+      '\n' +
+      dias(rosa, rosaR),
+    250,
+    200,
+  );
 
-  text(libros(lun)+'\n'+libros(mar)+'\n'+libros(mie)+'\n'+
-      libros(jue)+'\n'+libros(vie), 250, 350);
+  text(
+    libros(lun) +
+      '\n' +
+      libros(mar) +
+      '\n' +
+      libros(mie) +
+      '\n' +
+      libros(jue) +
+      '\n' +
+      libros(vie),
+    250,
+    350,
+  );
 
   qty++;
   text('Combinaciones\nprobadas: ' + qty, 50, 250);
 }
-
 
 function asignar(orden) {
   azul.mat1 = orden[0];
@@ -112,6 +167,9 @@ function asignar(orden) {
   rosa.mat3 = orden[14];
 }
 
+// Este código es del año del pedo.
+// Atte. Dam
+
 function dayCheck(book) {
   if (book.mat3 == 'f') {
     var lunes = data.mats[book.mat1].dias[0] + data.mats[book.mat2].dias[0];
@@ -120,24 +178,58 @@ function dayCheck(book) {
     var jueves = data.mats[book.mat1].dias[3] + data.mats[book.mat2].dias[3];
     var viernes = data.mats[book.mat1].dias[4] + data.mats[book.mat2].dias[4];
   } else if (book.mat4 == 'f') {
-    var lunes = data.mats[book.mat1].dias[0] + data.mats[book.mat2].dias[0] + data.mats[book.mat3].dias[0];
-    var martes = data.mats[book.mat1].dias[1] + data.mats[book.mat2].dias[1] + data.mats[book.mat3].dias[1];
-    var miercoles = data.mats[book.mat1].dias[2] + data.mats[book.mat2].dias[2] + data.mats[book.mat3].dias[2];
-    var jueves = data.mats[book.mat1].dias[3] + data.mats[book.mat2].dias[3] + data.mats[book.mat3].dias[3];
-    var viernes = data.mats[book.mat1].dias[4] + data.mats[book.mat2].dias[4] + data.mats[book.mat3].dias[4];
+    var lunes =
+      data.mats[book.mat1].dias[0] +
+      data.mats[book.mat2].dias[0] +
+      data.mats[book.mat3].dias[0];
+    var martes =
+      data.mats[book.mat1].dias[1] +
+      data.mats[book.mat2].dias[1] +
+      data.mats[book.mat3].dias[1];
+    var miercoles =
+      data.mats[book.mat1].dias[2] +
+      data.mats[book.mat2].dias[2] +
+      data.mats[book.mat3].dias[2];
+    var jueves =
+      data.mats[book.mat1].dias[3] +
+      data.mats[book.mat2].dias[3] +
+      data.mats[book.mat3].dias[3];
+    var viernes =
+      data.mats[book.mat1].dias[4] +
+      data.mats[book.mat2].dias[4] +
+      data.mats[book.mat3].dias[4];
   } else {
-    var lunes = data.mats[book.mat1].dias[0] + data.mats[book.mat2].dias[0] + data.mats[book.mat3].dias[0] + data.mats[book.mat4].dias[0];
-    var martes = data.mats[book.mat1].dias[1] + data.mats[book.mat2].dias[1] + data.mats[book.mat3].dias[1] + data.mats[book.mat4].dias[1];
-    var miercoles = data.mats[book.mat1].dias[2] + data.mats[book.mat2].dias[2] + data.mats[book.mat3].dias[2] + data.mats[book.mat4].dias[2];
-    var jueves = data.mats[book.mat1].dias[3] + data.mats[book.mat2].dias[3] + data.mats[book.mat3].dias[3] + data.mats[book.mat4].dias[3];
-    var viernes = data.mats[book.mat1].dias[4] + data.mats[book.mat2].dias[4] + data.mats[book.mat3].dias[4] + data.mats[book.mat4].dias[4];
+    var lunes =
+      data.mats[book.mat1].dias[0] +
+      data.mats[book.mat2].dias[0] +
+      data.mats[book.mat3].dias[0] +
+      data.mats[book.mat4].dias[0];
+    var martes =
+      data.mats[book.mat1].dias[1] +
+      data.mats[book.mat2].dias[1] +
+      data.mats[book.mat3].dias[1] +
+      data.mats[book.mat4].dias[1];
+    var miercoles =
+      data.mats[book.mat1].dias[2] +
+      data.mats[book.mat2].dias[2] +
+      data.mats[book.mat3].dias[2] +
+      data.mats[book.mat4].dias[2];
+    var jueves =
+      data.mats[book.mat1].dias[3] +
+      data.mats[book.mat2].dias[3] +
+      data.mats[book.mat3].dias[3] +
+      data.mats[book.mat4].dias[3];
+    var viernes =
+      data.mats[book.mat1].dias[4] +
+      data.mats[book.mat2].dias[4] +
+      data.mats[book.mat3].dias[4] +
+      data.mats[book.mat4].dias[4];
   }
-
 
   var days = [lunes, martes, miercoles, jueves, viernes];
 
-  for (let i = 0; i < 5; i++){
-    if (days[i] > 0){
+  for (let i = 0; i < 5; i++) {
+    if (days[i] > 0) {
       days[i] = 1;
     }
   }
@@ -157,31 +249,45 @@ function materia(m) {
 
 function materias(book, a, b, c, d) {
   if (book.mat3 == 'f') {
-    var temp = book.color + ': ' + data.mats[ordenRecord[a]].mat + ', ' + data.mats[ordenRecord[b]].mat;
+    var temp =
+      book.color +
+      ': ' +
+      data.mats[ordenRecord[a]].mat +
+      ', ' +
+      data.mats[ordenRecord[b]].mat;
   } else if (book.mat4 == 'f') {
-    var temp = book.color + ': ' + data.mats[ordenRecord[a]].mat + ', ' + data.mats[ordenRecord[b]].mat
-      + ', ' + data.mats[ordenRecord[c]].mat;
+    var temp =
+      book.color +
+      ': ' +
+      data.mats[ordenRecord[a]].mat +
+      ', ' +
+      data.mats[ordenRecord[b]].mat +
+      ', ' +
+      data.mats[ordenRecord[c]].mat;
   } else {
-    var temp = book.color + ': ' + data.mats[ordenRecord[a]].mat + ', ' + data.mats[ordenRecord[b]].mat
-      + ', ' + data.mats[ordenRecord[c]].mat + ', ' + data.mats[ordenRecord[d]].mat
+    var temp =
+      book.color +
+      ': ' +
+      data.mats[ordenRecord[a]].mat +
+      ', ' +
+      data.mats[ordenRecord[b]].mat +
+      ', ' +
+      data.mats[ordenRecord[c]].mat +
+      ', ' +
+      data.mats[ordenRecord[d]].mat;
   }
   return temp;
 }
 
 function dias(book, bookd) {
   var temp = [];
-  if (bookd[0] > 0)
-    temp.push('Lunes');
-  if (bookd[1] > 0)
-    temp.push('Martes');
-  if (bookd[2] > 0)
-    temp.push('Miercoles');
-  if (bookd[3] > 0)
-    temp.push('Jueves');
-  if (bookd[4] > 0)
-    temp.push('Viernes');
+  if (bookd[0] > 0) temp.push('Lunes');
+  if (bookd[1] > 0) temp.push('Martes');
+  if (bookd[2] > 0) temp.push('Miercoles');
+  if (bookd[3] > 0) temp.push('Jueves');
+  if (bookd[4] > 0) temp.push('Viernes');
 
-  return  book.color + ': ' + join(temp, ', ');
+  return book.color + ': ' + join(temp, ', ');
 }
 
 function libros(dia) {
