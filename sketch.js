@@ -186,18 +186,12 @@ function dias(book, bookd) {
 
 function libros(dia) {
   var temp = [];
-  if (azulR[dia[1]] > 0)
-    temp.push('Azul');
-  if (violetaR[dia[1]] > 0)
-    temp.push('Violeta');
-  if (verdeR[dia[1]] > 0)
-    temp.push('Verde');
-  if (negroR[dia[1]] > 0)
-    temp.push('Negro');
-  if (blancoR[dia[1]] > 0)
-    temp.push('Blanco');
-  if (rosaR[dia[1]] > 0)
-    temp.push('Rosa');
+  if (azulR[dia[1]] > 0) temp.push('Azul');
+  if (violetaR[dia[1]] > 0) temp.push('Violeta');
+  if (verdeR[dia[1]] > 0) temp.push('Verde');
+  if (negroR[dia[1]] > 0) temp.push('Negro');
+  if (blancoR[dia[1]] > 0) temp.push('Blanco');
+  if (rosaR[dia[1]] > 0) temp.push('Rosa');
 
-  return  dia[0] + ': ' + join(temp, ', ');
+  return dia[0] + ': ' + join(temp, ', ');
 }
